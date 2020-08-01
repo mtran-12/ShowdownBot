@@ -8,10 +8,12 @@ COPY requirements.txt /ShowdownBot/requirements.txt
 
 RUN pip3 install -r requirements.txt
 
-# COPY Battling/WebsocketsClient.py /ShowdownBot/Battling/WebsocketsClient.py
+COPY environment.py /ShowdownBot/environment.py
 
-COPY test.py /ShowdownBot/test.py
+COPY run.py /ShowdownBot/run.py
+
+COPY IOProcesses /ShowdownBot/IOProcesses
 
 ENV PYTHONIOENCODING=utf-8
 
-CMD ["python3", "test.py"]
+CMD ["python3", "run.py"]
